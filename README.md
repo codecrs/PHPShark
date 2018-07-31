@@ -1,15 +1,15 @@
-# PHPSpark
-PHP Spark - An Intensive PHP MVC framework for Advanced Developers. It has basic functionality of putting up complex portals in minutes.
+# PHPShark
+PHP Shark - An Intensive PHP MVC framework for Advanced Developers. It has basic functionality of putting up complex portals in minutes.
 However it is much as RAW as it is an Deliverable Framework. Not to be compare with Competents - CAKEPHP & CODEIGNITER or Even LARAVEL,
 as it was built to meet its own challenges. 
 
-# Purpose of PHPSpark.
-PHP SPARK is built basically for its ORM Query Library for Modeling. 
+# Purpose of PHPShark.
+PHP SHARK is built basically for its ORM Query Library for Modeling. 
 A powerful query library build with PDO architecture. 
 
 **PS** : the software is well tested with MySql Database. Will be ready for other databases soon. 
 
-## Lets us create a country table with PHPSpark Query. 
+## Lets us create a country table with PHPShark Query. 
 ```
 if(!\orm\Query::is_table('country')){
     \orm\Table::create()
@@ -47,7 +47,7 @@ Adding a field **created** to the *country* table.
     ]);
   }
 ```
-## CRUD Queries in PHPSpark
+## CRUD Queries in PHPShark
 OK! Now that our table is ready - let us push a data into it with an INSERT Query . 
 
 ### INSERT Query 
@@ -102,8 +102,8 @@ $this->db->fetch();
 
 ### The X() stands for execute. Please not, the query will not be performed unless this X() function executes it. 
 
-### PHPSpark Document Structure. 
-PHPSpark Document Structre is divided by folders & united by application structure - hahaha! just kidding. 
+### PHPShark Document Structure. 
+PHPShark Document Structre is divided by folders & united by application structure - hahaha! just kidding. 
 Inside the folder here you will see three basic folders and some files laying inside the root folder. 
 
 * app 
@@ -130,7 +130,7 @@ and other public assets are placed.
 This is were all the magic happens - all links, models, controllers and you view files resides inside this folder. 
 This folder is the driver of you portal. 
 
-### Installing PHPSpark. 
+### Installing PHPShark. 
 
 Well, when you first deploy this software into your XAMP or any other Server, get ready to get Overflooded with errors. 
 aarrrrrh! 
@@ -139,7 +139,7 @@ aarrrrrh!
 
 Well! Dont just start pulling your hair now, because this application has some pre-requisites and configurations.
 
-These are the steps you need to take care before you make you hands dirty with PHPSpark. 
+These are the steps you need to take care before you make you hands dirty with PHPShark. 
 
 1. Make sure you database is setup - This application points to a database with proper Username & Password. 
 2. Setup a configuration file in the *project folder*. 
@@ -237,8 +237,8 @@ Router::route("<base extenstion from the link>",["path" => < Path to the root fo
 The folder and root folder hierarchy specifically contribute to the links as 
 **Root -> Namespace ->Link Controller**. 
 
-# PHPSpark: MVC Structure
-PHPSpark follows the same MVC structure as all other framerworks do. However, here it is placed inside its namespace folder 
+# PHPShark: MVC Structure
+PHPShark follows the same MVC structure as all other framerworks do. However, here it is placed inside its namespace folder 
 and then all its - Model-View-Controller resides in the same place. 
 
 #Resuming the developement of my country. 
@@ -308,7 +308,7 @@ Well, This documentation is just get you a kick start. Full-Documentation of thi
 and will be published soon. 
 
 However - I will just lay down the source code of country creation below. 
-This will give you a fair Idea of how the MVC Source code of a page looks like when designed with PHPSpark framework. 
+This will give you a fair Idea of how the MVC Source code of a page looks like when designed with PHPShark framework. 
 
 # country.php 
 
@@ -679,7 +679,7 @@ I had designed my structure as the following.
   <?php $this->js("common","bootstrap/js/bootstrap.min") ?>
  ```
 
-Well, PHPSpark has its challenges, 
+Well, PHPShark has its challenges, 
 The application will still continue to develop by Developer [Ankit Kumar](https://www.linkedin.com/in/ankitkumar85/),
 via LinkedIn Netwrok. Feel free to use the application and contribute with pull requests. 
 
@@ -687,6 +687,3 @@ via LinkedIn Netwrok. Feel free to use the application and contribute with pull 
 # COMMING SOON
 The complete Documentation of this application will be release soon with a Demonstration. 
 Bye Bye, Take care. :)
-
-
-
