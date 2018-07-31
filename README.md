@@ -9,7 +9,7 @@ A powerful query library build with PDO architecture.
 **PS** : the software is well tested with MySql Database. Will be ready for other databases soon. 
 
 ## Lets us create a country table with PHPShark Query. 
-```
+```php
 if(!\orm\Query::is_table('country')){
     \orm\Table::create()
     ->table('country')
