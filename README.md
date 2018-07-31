@@ -35,7 +35,7 @@ Adding a field **modified** to the *country* table.
    }
 ```
 Adding a field **created** to the *country* table. 
-```
+```php
   if (!orm\Query::is_field('country', 'created')) {
     $this->alter([
       'table' => 'country',
@@ -50,7 +50,7 @@ Adding a field **created** to the *country* table.
 OK! Now that our table is ready - let us push a data into it with an INSERT Query . 
 
 ### INSERT Query 
-```
+```php
 $ins = $this->db->insert("countries")
                 ->values(["country_name", "country_code"])
                 ->x();
@@ -62,7 +62,7 @@ $ins   = $this->db->fetch();
 **$ins** now holds the last inserted id into the table
 
 ### SELECT Query 
-```
+```php
   $this->db->select(["countries_id", "country_name", "country_code"])
            ->from("countries")
            ->where("countries_id = id")
@@ -77,7 +77,7 @@ $ins   = $this->db->fetch();
 ```
 oh! Well I believe i should maintain my country with its native Hindi name. 
 ### UPDATE Query 
-```
+```php
 $upd = $this->db->update("countries")
             ->set(["country_name"])
             ->where("countries_id = id")
@@ -93,7 +93,7 @@ AAh!! I just found one user fiddling with my databases and I am very much annoye
 Let me just delete this guy from here. 
 
 ### DELETE Query 
-```
+```php
 $this->db->delete("users")->where("user_id = id")->x();
 $this->db->parameter("id",'1');
 $this->db->fetch();
@@ -188,7 +188,7 @@ The time I stared building this application, I had first designed my links.
 ### Router Setup: Rest API Links. 
 PS - This application supports the **REST** and **CLEAN** URLs 
 
-```
+```php
 \\Members access: <base>/member/
 Router::route("member",["path" => "customers".DS."members"]);
 
@@ -255,7 +255,7 @@ required:
 3. class constructor with its parent construct - A Must.
 4. A default index method. 
 
-```
+```php
 <?php
 namespace admin{
   class Country extends \AppController{
@@ -276,7 +276,7 @@ required:
 2. class renamed with "_Model" that extends \AppModel. 
 3. class constructor with its parent construct - A Must.
 
-```
+```php
 <?php
 namespace admin{
   class Country_Model extends \AppModel{
@@ -311,7 +311,7 @@ This will give you a fair Idea of how the MVC Source code of a page looks like w
 
 # country.php 
 
-```
+```php
 <?php 
 namespace admin{
     class Country extends \AppController{
@@ -374,7 +374,7 @@ namespace admin{
     
 # country_model.php 
 
-```
+```php
 <?php 
 
 namespace admin{
@@ -440,7 +440,7 @@ namespace admin{
 
 
 # add_view.php
-```
+```php
 <?php $this->inc('themes/pages/page_start'); ?>
 <?php $this->inc('themes/navigation/admin') ?>
 
@@ -493,7 +493,7 @@ namespace admin{
 
 # edit_view.php
 
-```
+```php
 <?php $this->inc('themes/pages/page_start'); ?>
 <?php $this->inc('themes/navigation/webadmin') ?>
 <?php $id = $this->get("id"); ?>
@@ -564,7 +564,7 @@ namespace admin{
 
 # index_view.php
 
-```
+```php
 <?php $this->inc('themes/pages/page_start'); ?>
 <?php $this->inc('themes/navigation/webadmin') ?>
 <?php $this->inc('themes/style.fix') ?>
@@ -620,7 +620,7 @@ Your project file has a template Section. Well, sometimes there are few sections
 They can be Header, footer, menus or anything. These templates can be created and stored inside this template folder and called 
 via *inc* function. oh! dont bother about the name, its simply the folder creation and their names. 
 
- ```
+ ```php
  $this->inc(themes/pages/page_start);
  ```
  
@@ -672,7 +672,7 @@ I had designed my structure as the following.
     * js/css designed for specific pages 2
     
     
- ```
+ ```php
   <?php $this->css("common","bootstrap/css/bootstrap.min"); ?>
   <?php $this->js("common","jquery/jquery.min") ?>
   <?php $this->js("common","bootstrap/js/bootstrap.min") ?>
