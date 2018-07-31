@@ -23,7 +23,7 @@ if(!\orm\Query::is_table('country')){
 
 ## Oops! I Just missed two fields - 'creation' and 'modification'. 
 Adding a field **modified** to the *country* table. 
-```
+```php
   if (!orm\Query::is_field('country', 'modified')) {
       $this->alter([
         'table' => 'country',
