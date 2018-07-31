@@ -1,7 +1,6 @@
 # PHPShark
 PHP Shark - An Intensive PHP MVC framework for Advanced Developers. It has basic functionality of putting up complex portals in minutes.
-However it is much as RAW as it is an Deliverable Framework. Not to be compare with Competents - CAKEPHP & CODEIGNITER or Even LARAVEL,
-as it was built to meet its own challenges. 
+However it is much as RAW as it is an Deliverable Framework. It is Not to be compare with Competents - CAKEPHP & CODEIGNITER or Even LARAVEL, as it was built to meet its own challenges. 
 
 # Purpose of PHPShark.
 PHP SHARK is built basically for its ORM Query Library for Modeling. 
@@ -682,6 +681,10 @@ I had designed my structure as the following.
 Well, PHPShark has met its challenges, 
 The application will still continue to develop by Developer [Ankit Kumar](https://www.linkedin.com/in/ankitkumar85/),
 via LinkedIn Netwrok. Feel free to use the application and contribute with pull requests. 
+
+# Vendor Integrations 
+The Application was Pre-Configures with [PHP-Mailer](https://github.com/PHPMailer/PHPMailer) for messageing purpose. 
+Be sure to visit them for their documentations when required. 
 
 
 # COMMING SOON
