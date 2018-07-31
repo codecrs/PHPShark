@@ -612,7 +612,7 @@ namespace admin{
 
 # I Know! I Know!! - DRY Coding technique is here. 
 
-You must be wondering about these functions popin up all of a sudden. Yes! they are all will be documented soon. 
+You must be wondering about these functions popin up all of a sudden. Yes! they all will be documented soon. 
 But since this project has already been put up, I will not leave this part un-explored and let you die with axiety. 
 
 So here it is, 
