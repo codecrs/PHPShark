@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<APP>
+	<CONFIGURATION>
+		<PHP>appconfig</PHP>
+		<!--
+///////////////////////////////////////////////////////////////////////////////////
+First of all it is recommended NOT TO CHANGE ANY XML FORMATS / TAGS
+provide for User and Application XML Settings file.
+for more information.
+Refer to the Application document for user settings & Changes.
+//////////////////////////////////////////////////////////////////////////////////
+-->
+		<!--zx
+ Name Your projects
+-->
+		<PROJECT></PROJECT>
+		<BASE></BASE>
+		<!--
+Enivronment Settings
+-->
+		<ENVIRONMENT>development</ENVIRONMENT>
+		<CODE_MINIFY>off</CODE_MINIFY>
+		<REMOVE_COMMENTS>off</REMOVE_COMMENTS>
+		<ERROR_REPORTING>Automatic</ERROR_REPORTING>
+		<!--
+Application Error Mode
+-->
+		<APPLICATION_ERROR>ON</APPLICATION_ERROR>
+		<ERROR>ON</ERROR>
+
+		<!--
+Application Error Mode
+-->
+		<USER_ROUTER>ON</USER_ROUTER>
+		<!--
+Database Connection
+-->
+		<PERSISTENT>false</PERSISTENT>
+		<DATASOURCE>mysql</DATASOURCE>
+		<HOST>localhost</HOST>
+		<PORT></PORT>
+		<DATABASE></DATABASE>
+		<LOGIN></LOGIN>
+		<PASSWORD></PASSWORD>
+		<CHARSET>utf8</CHARSET>
+		<COLLATION>utf8_unicode_ci</COLLATION>
+		<PREFIX></PREFIX>
+
+<!-- User Tables -->
+		<WEBADMIN_USER_TABLE>system_users</WEBADMIN_USER_TABLE>
+		<WEBADMIN_USER_KEY>sys_user_id</WEBADMIN_USER_KEY>
+
+<!-- Authorization Tables -->
+		<ROLE_MODULE_ACTIVE>YES</ROLE_MODULE_ACTIVE>
+		<ROLE_TABLES>auth_roles</ROLE_TABLES>
+		<PERMISSION_TABLES>auth_permissions</PERMISSION_TABLES>
+		<ROLE_PERMISSION_TABLES>auth_role_permissions</ROLE_PERMISSION_TABLES>
+		<USER_ROLES_TABLES>auth_user_roles</USER_ROLES_TABLES>
+		<OBJECT_TYPE_TABLE>auth_obj_type</OBJECT_TYPE_TABLE>
+		<ACTIVITY_TYPE_TABLE>auth_activities</ACTIVITY_TYPE_TABLE>
+
+<!-- GLOBAL FUNCTIONS FOLDER -->
+		<GLOBAL_FUNCTIONS></GLOBAL_FUNCTIONS>
+
+		<!--
+Mail system & Protocols Configuration
+-->
+		<MAIL_HOST>smtp.gmail.com</MAIL_HOST>
+		<MAIL_USER>mail2ankit85@gmail.com</MAIL_USER>
+		<MAIL_PASSWORD>aufjhjsolahiqooc</MAIL_PASSWORD>
+		<MAIL_SMTP_SECURE>tls</MAIL_SMTP_SECURE>
+		<MAIL_PORT>587</MAIL_PORT>
+		<MAIL_SET_FROM>from@example.com</MAIL_SET_FROM>
+		<MAIL_SET_FROM_TYPE>Mailer</MAIL_SET_FROM_TYPE>
+		<MAIL_SMTP_AUTH>true</MAIL_SMTP_AUTH>
+		<MAIL_ADD_ADDRESS>mail2ankit85@gmail.com</MAIL_ADD_ADDRESS>
+		<MAIL_RECIPIENT_NAME>Ankit Kumar</MAIL_RECIPIENT_NAME>
+		<MAIL_IS_HTML>true</MAIL_IS_HTML>
+		<TEMPLATE_FOLDER>templates</TEMPLATE_FOLDER>
+		<!--
+Language
+-->
+		<LANGUAGE>en</LANGUAGE>
+		<!--
+Security Functions:
+-->
+		<SECURITY_FUNCTION>md5</SECURITY_FUNCTION>
+		<SECURITY_SALT></SECURITY_SALT>
+
+<!--
+	FOLDER SETTING
+-->
+		<UPLOAD_FOLDER>upload</UPLOAD_FOLDER>
+		<DOWNLOAD_FOLDER>download</DOWNLOAD_FOLDER>
+		<!--
+img folder Settings:
+-->
+		<TARGET_FILE_FOLDER>upload</TARGET_FILE_FOLDER>
+		<ORIGINAL_FILE_FOLDER>original</ORIGINAL_FILE_FOLDER>
+		<RESIZED_FILE_FOLDER>upload</RESIZED_FILE_FOLDER>
+		<THUMBNAIL_FILE_FOLDER>upload</THUMBNAIL_FILE_FOLDER>
+		<FILE_PREFIX>thumb_</FILE_PREFIX>
+		<!--
+Log Settings
+-->
+		<APP_LOG_SWITCH>ON</APP_LOG_SWITCH>
+		<DB_LOG_SWITCH>ON</DB_LOG_SWITCH>
+		<AUDIT_LOG_SWITCH>ON</AUDIT_LOG_SWITCH>
+		<APP_LOG>logs.application</APP_LOG>
+		<DB_LOG>logs.database</DB_LOG>
+		<AUDIT_LOG>logs.audit</AUDIT_LOG>
+		<AUDIT_FILE>audit-log</AUDIT_FILE>
+		<APP_FILE>app-log</APP_FILE>
+		<DB_FILE>db-log</DB_FILE>
+
+		<!--
+SRC View
+-->
+		<VIEW_FOLDER>view</VIEW_FOLDER>
+		<INDEX_URI>/</INDEX_URI>
+		<ERROR_URI>404</ERROR_URI>
+		<DEFAULT_INDEX_FILE>index</DEFAULT_INDEX_FILE>
+		<DEFAULT_ERROR_FILE>error</DEFAULT_ERROR_FILE>
+
+		<!-- Cookie -->
+		<COOLKIE_EXPIRY>604800</COOLKIE_EXPIRY>
+
+		<!-- Session -->
+		<SESSION_NAME>user</SESSION_NAME>
+		<TOKEN_NAME>token</TOKEN_NAME>
+		<MAXIMUM_EXECUTION_TIME>100</MAXIMUM_EXECUTION_TIME>
+
+		<!-- Timezone -->
+		<DATE_TIMEZONE>Asia/Kolkata</DATE_TIMEZONE>
+
+		<!-- PHP ini -->
+		<SHORT_OPEN_TAG>OFF</SHORT_OPEN_TAG>
+		<SAFE_MODE>OFF</SAFE_MODE>
+		<DISPLAY_ERRORS>OFF</DISPLAY_ERRORS>
+		<SET_ERROR_REPORTING_MANUAL>E_ALL</SET_ERROR_REPORTING_MANUAL>
+		<LOG_ERRORS>on</LOG_ERRORS>
+		<ERROR_LOG>logs.php</ERROR_LOG>
+		<PHP_FILE>php-log</PHP_FILE>
+
+		<!-- SMS settings -->
+		<API_NAME></API_NAME>
+		<SET_TIME_LIMIT>0</SET_TIME_LIMIT>
+		<API_ID></API_ID>
+		<API_PASSWORD></API_PASSWORD>
+
+		<!-- Format Settings -->
+		<DATE_FORMAT>Y-m-d</DATE_FORMAT>
+		<TIME_FORMAT>h:i:sa</TIME_FORMAT>
+		<CURRENCY_DECIMAL>.</CURRENCY_DECIMAL>
+		<CURRENCY_SEPARATOR>,</CURRENCY_SEPARATOR>
+		<CURRENCY_DECIMAL_PLACES>2</CURRENCY_DECIMAL_PLACES>
+		<BASE_CURRENCY>INR</BASE_CURRENCY>
+	</CONFIGURATION>
+</APP>

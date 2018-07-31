@@ -1,0 +1,4 @@
+>2018-07-28:09:37:20am
+>2018-07-28:09:37:20am
+- SQLSTATE[HY000] [2002] No such file or directory
+- SQLSTATE[HY000] [2002] No such file or directory
