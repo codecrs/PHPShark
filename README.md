@@ -100,7 +100,7 @@ $this->db->parameter("id",'1');
 $this->db->fetch();
 ```
 
-### The X() stands for execute. Please not, the query will not be performed unless this X() function executes it. 
+### The X() stands for execute. Please note, the query will not be performed unless this X() function executes it. 
 
 ### PHPShark Document Structure. 
 PHPShark Document Structre is divided by folders & united by application structure - hahaha! just kidding. 
@@ -146,24 +146,6 @@ These are the steps you need to take care before you make you hands dirty with P
 3. You need to set up a **router.php** placed inside the *project folder*. 
 4. Be sure to place and error page for your typical - 404 Page not found. 
 
-AAA! well I could has done all of these for you, but like I said when I started - ITS RAW PHP and 
-you may want to do stuffs here if you want - Say via application design or 3rd party connections. 
-
-# The Scenerio
-One of my clients had a requirement of setting up pages in the following formats. 
-they wanted 5 Sections 
-
-* Public - Pages where guests can access wihout a login. 
-* Admin - The area for Administrator's login. 
-  * **Super** - The super admin has the access to all the database
-  * **Agent** - Where partial-database is accessed via roles. 
-* Member - Where is client/vender can register themeselves. 
-  * **Users** - All Generals users or say the clients. 
-  * **Dealers** - Were the people with raw material can register via administrator's approval. 
-  
-# By Design
-The time I stared building this application, I had first designed my links. 
-
 # Config.xml
 The XML file holds all the basic configurations to get you started. 
 It has pritty much a lot of things inside, but for now we will only take up tags that will help us get started. 
@@ -184,6 +166,24 @@ It has pritty much a lot of things inside, but for now we will only take up tags
 
 > **SECURITY_SALT** tag:  Specifies the Security Hasing Key for your password. 
 This will be used for your password hasing when you create the login system of your application. 
+
+AAA! well I could has done all of these for you, but like I said when I started - ITS RAW PHP and 
+you may want to do stuffs here if you want - Say via application design or 3rd party connections. 
+
+# The Scenerio
+One of my clients had a requirement of setting up pages in the following formats. 
+they wanted 5 Sections 
+
+* Public - Pages where guests can access wihout a login. 
+* Admin - The area for Administrator's login. 
+  * **Super** - The super admin has the access to all the database
+  * **Agent** - Where partial-database is accessed via roles. 
+* Member - Where is client/vender can register themeselves. 
+  * **Users** - All Generals users or say the clients. 
+  * **Dealers** - Were the people with raw material can register via administrator's approval. 
+  
+# By Design
+The time I stared building this application, I had first designed my links. 
 
 # Router.php
 ### Router Setup: Rest API Links. 
@@ -679,7 +679,7 @@ I had designed my structure as the following.
   <?php $this->js("common","bootstrap/js/bootstrap.min") ?>
  ```
 
-Well, PHPShark has its challenges, 
+Well, PHPShark has met its challenges, 
 The application will still continue to develop by Developer [Ankit Kumar](https://www.linkedin.com/in/ankitkumar85/),
 via LinkedIn Netwrok. Feel free to use the application and contribute with pull requests. 
 
