@@ -22,7 +22,7 @@ if(!\orm\Query::is_table('country')){
 }
 ```
 
-## Oops! I Just missed two field I would require to collect data of the data 'creation' and 'modification'. 
+## Oops! I Just missed two fields - 'creation' and 'modification'. 
 Adding a field **modified** to the *country* table. 
 ```
   if (!orm\Query::is_field('country', 'modified')) {
