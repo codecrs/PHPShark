@@ -177,11 +177,11 @@ This will be used for your password hasing when you create the login system of y
 One of my clients had a requirement of setting up pages in the following formats. 
 they wanted 5 Sections 
 
-* Public - Pages where guests can access wihout a login. 
+* Public - Pages where guests can access without a login. 
 * Admin - The area for Administrator's login. 
   * **Super** - The super admin has the access to all the database
   * **Agent** - Where partial-database is accessed via roles. 
-* Member - Where is client/vender can register themeselves. 
+* Member - Where is client/vender can register themselves. 
   * **Users** - All Generals users or say the clients. 
   * **Dealers** - Were the people with raw material can register via administrator's approval. 
   
@@ -241,7 +241,7 @@ The folder and root folder hierarchy specifically contribute to the links as
 **Root -> Namespace ->Link Controller**. 
 
 # PHPShark: MVC Structure
-PHPShark follows the same MVC structure as all other framerworks do. However, here it is placed inside its namespace folder 
+PHPShark follows the same MVC structure as all other frameworks do. However, here it is placed inside its namespace folder 
 and then all its - Model-View-Controller resides in the same place. 
 
 #Resuming the developement of my country. 
