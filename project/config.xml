@@ -27,10 +27,6 @@ Application Error Mode
 -->
 		<APPLICATION_ERROR>ON</APPLICATION_ERROR>
 		<ERROR>ON</ERROR>
-
-		<!--
-Application Error Mode
--->
 		<USER_ROUTER>ON</USER_ROUTER>
 		<!--
 Database Connection
