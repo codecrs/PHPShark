@@ -111,7 +111,7 @@ Inside the folder here you will see three basic folders and some files laying in
 * src
 
 ## App Folder
-In order, not to break the application - I would recommend not to touch this folder and files inside of it.
+In order, not to break the application - I would not recommend you to touch this folder and files inside of it.
 reason being this is the application folder and there will be a lot of changes and upgrades to this folder as the application
 moves on in its course of deployment. If you feel like debugging and dig this application, please be my guest, but that doesn't **guarantee** a hassle free upgrade. you can just open a a pull request to make amendments or even contribute to a big fix.
 
@@ -120,7 +120,7 @@ This folder is your version of APP folder. This is where you can create you cust
 All the changes are recommended to reside inside the project folder. This is the folder that contains you files *Router* and *configuration* files as well. The two files are mandatory files required by the application.
 
 ## Public Folder
-This is public repository of you project. When the folder is deployed, this is where you public accessable files like - CSS/JS
+This is public repository of you project. When the folder is deployed, this is where you public accessible files like - CSS/JS
 and other public assets are placed.
 
 ## Src Folder
