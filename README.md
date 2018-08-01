@@ -140,16 +140,22 @@ Well! Dont just start pulling your hair now, because this application has some p
 
 These are the steps you need to take care before you make you hands dirty with PHPShark. 
 
-1. Make sure you database is setup - This application points to a database with proper Username & Password. 
+1. Make sure your database is setup - This application points to a database with proper Username & Password. 
 2. Setup a configuration file in the *project folder*. 
 3. You need to set up a **router.php** placed inside the *project folder*. 
 4. Be sure to place and error page for your typical - 404 Page not found. 
 
+AAA! well I could has done all of these for you, but like I said when I started - ITS RAW PHP and 
+you may want to do stuffs here if you want - Say via application design or 3rd party connections. 
+
+
 # Config.xml
 The XML file holds all the basic configurations to get you started. 
-It has pritty much a lot of things inside, but for now we will only take up tags that will help us get started. 
+It has pretty much a lot of things inside, but for now we will only take up tags that will help us get started. 
 
 > **PROJECT** tag: This the description of you project. 
+
+> **BASE** tag:	The base link of your project on server.
 
 > **ENVIRONMENT** tag: It takes up the values < development | quality| production >
 
@@ -165,9 +171,6 @@ It has pritty much a lot of things inside, but for now we will only take up tags
 
 > **SECURITY_SALT** tag:  Specifies the Security Hasing Key for your password. 
 This will be used for your password hasing when you create the login system of your application. 
-
-AAA! well I could has done all of these for you, but like I said when I started - ITS RAW PHP and 
-you may want to do stuffs here if you want - Say via application design or 3rd party connections. 
 
 # The Scenerio
 One of my clients had a requirement of setting up pages in the following formats. 
