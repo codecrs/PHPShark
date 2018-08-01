@@ -172,7 +172,8 @@ It has pretty much a lot of things inside, but for now we will only take up tags
 > **SECURITY_SALT** tag:  Specifies the Security Hasing Key for your password. 
 This will be used for your password hasing when you create the login system of your application. 
 
-# The Scenerio
+# The Scenario
+
 One of my clients had a requirement of setting up pages in the following formats. 
 they wanted 5 Sections 
 
@@ -228,7 +229,7 @@ For the above links the src (source) structure folder is places as below.
   * index
   
 ### Explanation 
-**Router** file is a pointer file. It points the direction of the links to the files avaiable inside the source folder. 
+**Router** file is a pointer file. It points the direction of the links to the files available inside the source folder. 
 if the pointed file does not exist, or is not pointed, the router is automatically directed to the error. 
 
 ### Router Class Syntax. 
