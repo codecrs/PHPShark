@@ -323,12 +323,12 @@ namespace core\lib\imgs {
 		 */
 		public function confirmMsg()
 		{
-			$this->removeTempFile($this->_fileTmpLoc);
+			$this->removeTempFile($this->_fileTmpLoc, $target = null);
 		}
 
 		public function convert_to_jpg()
 		{
-			$target = $this->target_file;
+			if($target !== null) $target = $this->target_file;
 			$newcopy = 'conv_' . $this->target_file;
 			$ext = $this->_fileExt;
 
@@ -354,10 +354,10 @@ namespace core\lib\imgs {
 		 *   Contruct the Bootstrap.
 		 *   @return boolen|String
 		 */
-		public function imgWatermark($wtrmrk_file)
+		public function imgWatermark($wtrmrk_file,$target == null)
 		{
 
-			$target = $this->target_file;
+			if($target !== null) $target = $this->target_file;
 			$newcopy = 'conv_' . $this->target_file;
 			$watermark = imagecreatefrompng($wtrmrk_file);
 
