@@ -322,11 +322,11 @@ namespace core\lib\imgs {
 		 *   @return boolen|String
 		 */
 		public function confirmMsg()
-		{
-			$this->removeTempFile($this->_fileTmpLoc, $target = null);
+		{ 	 	
+			$this->removeTempFile($this->_fileTmpLoc);
 		}
 
-		public function convert_to_jpg()
+		public function convert_to_jpg($target = null)
 		{
 			if($target !== null) $target = $this->target_file;
 			$newcopy = 'conv_' . $this->target_file;
