@@ -125,7 +125,7 @@ namespace orm {
 		
 		/***************************************************************
 		 ***************************************************************/
-		public static function execute_check(string $query, $fetchMode = PDO::FETCH_ASSOC)
+		public static function execute_check(string $query, $fetchMode = PDO::FETCH_OBJ)
 		{
 			try {
 				$con = pdo();
