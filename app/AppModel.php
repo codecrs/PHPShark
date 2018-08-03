@@ -66,7 +66,6 @@ class AppModel extends \core\Model{
 	public $phpMailer;
 	public $paginate;
 	public $query;
-	public $token; 
 	public $db;
 	public $pdo;
 	public $session;
@@ -88,7 +87,6 @@ Description:
 		$this->phpMailer = new PHPMailer;
 		$this->paginate  = new pages\pagination();
 		$this->query     = new orm\Query;
-		$this->token     = utils\Token::init();
 		$this->pdo       = pdo();
 		$this->db		 = new crud\db();
 		\Session::init();
