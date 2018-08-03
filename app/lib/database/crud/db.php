@@ -25,7 +25,7 @@ namespace crud{
             if(!array_key_exists("stringify", $op)) $op["stringify"] = false;
             if(!array_key_exists("emulation", $op)) $op["emulation"] = true;
             //if(!array_key_exists("err_mode", $op))  $op["err_mode"]  = "warning";
-            if(!array_key_exists("mode",     $op))  $op["mode"]      = PDO::FETCH_ASSOC;
+            if(!array_key_exists("mode",     $op))  $op["mode"]      = PDO::FETCH_OBJ;
             
             // if(array_key_exists("err_mode", $op)){
             //     $op["err_mode"] = strtolower($op["err_mode"]);
