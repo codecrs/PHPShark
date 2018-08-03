@@ -50,7 +50,7 @@ namespace orm {
 			$this->_db = null;
 		}
 
-		public function execute($fetchMode = PDO::FETCH_OBJ, string $fetch = "fetchAll")
+		public function execute($fetchMode = PDO::FETCH_ASSOC, string $fetch = "fetchAll")
 		{
 			try {
 				$statement = $this->_db->prepare($this->_query);
