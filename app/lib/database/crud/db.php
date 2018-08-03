@@ -264,11 +264,14 @@ namespace crud{
                     case 'unique':
                          $fetchSet = PDO::FETCH_UNIQUE;
                          break;
-                    default:
+                    case 'assoc':
                          $fetchSet = PDO::FETCH_ASSOC;
+                         break;
+                    default:
+                         $fetchSet = PDO::FETCH_OBJ;
                 }
             }else{
-                $fetchSet = PDO::FETCH_ASSOC;
+                $fetchSet = PDO::FETCH_OBJ;
             }
 
             if(array_key_exists("function",$opt)){
@@ -406,7 +409,7 @@ namespace crud{
             $stm = $this->prepare(trim($q));
             try{
                 if($stm->execute()){
-                    return $stm->fetchAll(PDO::FETCH_ASSOC);
+                    return $stm->fetchAll(PDO::FETCH_OBJ);
                 }else{
                     return null;
                 }
