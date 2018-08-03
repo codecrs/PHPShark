@@ -345,7 +345,7 @@ namespace orm {
 			return $this;
 		}
 
-		public function execute($fetchMode = PDO::FETCH_OBJ)
+		public function execute($fetchMode = PDO::FETCH_ASSOC)
 		{
 			try {	
 				$statement = $this->_db->prepare($this->_query);
