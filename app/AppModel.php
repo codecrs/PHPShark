@@ -41,10 +41,8 @@ $this->cookie    = new utils\Cookie(utils\Config::get('remember/cookie_expiry'))
 $this->files     = new files\Files();
 $this->image     = new imageUtils\Image();
 $this->upload    = new fupload\Upload();
-$this->session   = new utils\Session();
 $this->template  = new core\Template();
 $this->warehouse = new wh\Warehouse();
-$this->slim      = new slim\Slim();
 $this->json      = new json\Json();
 $this->sms       = new smsCon\SMS();
 $this->form      = new forms\Form();
@@ -67,11 +65,8 @@ class AppModel extends \core\Model{
 	public $validator;
 	public $phpMailer;
 	public $paginate;
-	public $excel;
-	public $excelPlug;
 	public $query;
 	public $token; 
-	public $phpform;
 	public $db;
 	public $pdo;
 	public $session;
@@ -92,7 +87,6 @@ Description:
 		$this->validator = new forms\Validator(new errs\ErrorHandler);
 		$this->phpMailer = new PHPMailer;
 		$this->paginate  = new pages\pagination();
-		$this->excel     = new files\Excel;
 		$this->query     = new orm\Query;
 		$this->token     = utils\Token::init();
 		$this->pdo       = pdo();
