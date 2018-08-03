@@ -43,7 +43,7 @@ namespace core\lib\json{
 		}
 		/***************************************************************
          ***************************************************************/
-		protected function writeJSONFile($rows, $name = null, $obj = true, $path = null)
+		public function writeJSONFile($rows, $name = null, $obj = true, $path = null)
 		{
 			if ($path == null) {
 				$default_path = PROJECT_PATH . 'warehousing' . DS;
@@ -68,7 +68,7 @@ namespace core\lib\json{
 		}
 		/***************************************************************
          ***************************************************************/
-		protected function readJSONFile($name = null, $path = null)
+		public function readJSONFile($name = null, $path = null)
 		{
 			if ($path == null) {
 				$default_path = PROJECT_PATH . 'migrations' . DS;
@@ -84,7 +84,7 @@ namespace core\lib\json{
 		}
 		/***************************************************************
          ***************************************************************/
-		protected function searchReadJSONFile($key, $equalValue, $name = null, $path = null)
+		public function searchReadJSONFile($key, $equalValue, $name = null, $path = null)
 		{
 			if ($path == null) {
 				$default_path = PROJECT_PATH . 'migrations' . DS;
@@ -104,7 +104,7 @@ namespace core\lib\json{
 		}
 		/***************************************************************
          ***************************************************************/
-		protected function JsonAPIValues($url)
+		public function JsonAPIValues($url)
 		{
 			$json = file_get_contents($url);
 			$obj = json_decode($json);
@@ -113,7 +113,7 @@ namespace core\lib\json{
 
 		/***************************************************************
 		***************************************************************/
-		public static function encode($value, $options = 0) {
+		public function encode($value, $options = 0) {
 			header("Content-type: application/json; charset=utf-8");
 			$result = json_encode($value, $options);
 
@@ -125,7 +125,7 @@ namespace core\lib\json{
 		}
 		/***************************************************************
 		***************************************************************/
-		public static function decode($json, $assoc = false) {
+		public function decode($json, $assoc = false) {
 			$result = json_decode($json, $assoc);
 
 			if($result) {
@@ -137,7 +137,7 @@ namespace core\lib\json{
 
 		/***************************************************************
 		***************************************************************/
-		public static function output($dados, $charset = 'UTF-8'){
+		public function output($dados, $charset = 'UTF-8'){
 			header('Content-Type: application/json');
 			if ($charset <> 'UFT-8') {
 				array_walk_recursive($dados, function(&$value, $key) {
