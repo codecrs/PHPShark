@@ -163,25 +163,6 @@ All corresponding settings are available at settings.xml level in the project fo
 Description: 
 		***************************************************************/
 		//=============================
-		// URL/URI FUNCTIONS
-		//=============================
-		protected function getUrlValues(){
-			if (REQUEST == 'GET' && !empty(ROUTE)) {
-				$result = explode('&', ROUTE);
-				unset($result[0]);
-				$result = array_values($result);
-				return $result;
-			}
-			elseif (REQUEST == 'POST') {
-				$result = $_POST;
-				return $result;
-			}
-			else {
-				return NULL;
-			}
-		}
-
-		//=============================
 		// Model List Functions
 		//=============================
 		protected function getlist(string $table){
