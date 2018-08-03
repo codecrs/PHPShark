@@ -146,26 +146,6 @@ Description: Output the JSON format at controller level.
 			}
 		}
 
-		//=============================
-		// URL/URI FUNCTIONS
-		//=============================
-
-		protected function getUrlValues(){
-			if (REQUEST == 'GET' && !empty(ROUTE)) {
-				$result = explode('&', ROUTE);
-				unset($result[0]);
-				$result = array_values($result);
-				return $result;
-			}
-			elseif (REQUEST == 'POST') {
-				$result = $_POST;
-				return $result;
-			}
-			else {
-				return NULL;
-			}
-		}
-
 		//************************
 		//COMMON PAGE FUNCTIONS
 		//************************
