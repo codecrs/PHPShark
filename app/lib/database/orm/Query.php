@@ -73,7 +73,7 @@ namespace orm {
 		}
 		/***************************************************************
 		 ***************************************************************/
-		public static function is_db(string $db = '')
+		public static function is_db(string $db = null)
 		{
 			if ($db == null)
 				$db = utils\Config::get('database_credits/database');
