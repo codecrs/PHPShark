@@ -254,6 +254,11 @@ namespace crud{
             return $this;
         }
 
+        public function offset(int $offset){
+            $this->_query .= "OFFSET {$offset} ";
+            return $this;
+        }
+        
         public function where_between($field, $lower, $upper){
             $this->_query .= "WHERE `{$field}` BETWEEN {$lower} AND {$upper}";
             return $this;
@@ -269,10 +274,6 @@ namespace crud{
             return $this;
         }
 
-        public function offset(int $offset){
-            $this->_query .= "OFFSET {$offset} ";
-            return $this;
-        }
 
         public function x($opt = null){
             $this->_statement = $this->prepare(trim($this->_query));
