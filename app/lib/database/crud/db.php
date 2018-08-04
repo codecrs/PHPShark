@@ -81,6 +81,14 @@ namespace crud{
             $this->_query = "SELECT DISTINCT {$col} ";
             return $this;
         }
+        
+         public function count_distinct(array $columns){
+            $this->_query = "";
+            $this->_queryType = "select";
+            $col = join(",", $columns);
+            $this->_query = "SELECT COUNT (DISTINCT {$col}) ";
+            return $this;
+        }
 
         public function function(string $func, string $column){
             $this->_query = "";
