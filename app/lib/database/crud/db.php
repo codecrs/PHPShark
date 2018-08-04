@@ -160,6 +160,50 @@ namespace crud{
             return $this;
         }
 
+        public function where_not_in(string $fieldName, $param) {
+            $sqlPart = "WHERE NOT {$fieldName} IN (" 
+            if(is_array($param)){
+                foreach ($param as $key => $value) {
+                    $sqlPart .= "`:{$field}` ";
+                };
+            }else{
+                $sqlPart .= $param;
+            }
+            $sqlPart .= ") ";
+
+            $this->_query = $sqlPart;
+            return $this;
+        }
+
+        public function and_not_in(string $fieldName, $param) {
+            $sqlPart = "AND NOT {$fieldName} IN (" 
+            if(is_array($param)){
+                foreach ($param as $key => $value) {
+                    $sqlPart .= "`:{$field}` ";
+                };
+            }else{
+                $sqlPart .= $param;
+            }
+            $sqlPart .= ") ";
+
+            $this->_query = $sqlPart;
+            return $this;
+        }
+
+        public function or_not_in(string $fieldName, $param) {
+            $sqlPart = "OR NOT {$fieldName} IN (" 
+            if(is_array($param)){
+                foreach ($param as $key => $value) {
+                    $sqlPart .= "`:{$field}` ";
+                };
+            }else{
+                $sqlPart .= $param;
+            }
+            $sqlPart .= ") ";
+
+            $this->_query = $sqlPart;
+            return $this;
+        }
 
         public function where_is_null($field, boolean $null = true){  
             if($null){
