@@ -96,6 +96,11 @@ namespace crud{
             $this->_query = "SELECT {$func}({$column}) ";
             return $this;
         }
+        
+        public function as(string $field){
+            $this->_query .= "AS `{$field}` ";
+            return $this;
+        }
 
         public function from(string $table){
             $this->_query .= "FROM `{$this->_database}`.`{$table}` ";
