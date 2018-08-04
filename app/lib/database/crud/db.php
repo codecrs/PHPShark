@@ -113,7 +113,7 @@ namespace crud{
                 }
 
                 if(strToLower($null) == "no"){
-                    $this->_query .= "WHERE {$explode[0]} {$explode[1]} {$explode[2]}IS NOT NULL";
+                    $this->_query .= "WHERE {$explode[0]} {$explode[1]} {$explode[2]} IS NOT NULL";
                 }
             }else{
                 $this->_query .= "WHERE {$explode[0]} {$explode[1]} {$explode[2]} ";
