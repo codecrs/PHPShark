@@ -101,26 +101,24 @@ namespace crud{
             $this->_query .= "FROM `{$this->_database}`.`{$table}` ";
             return $this;
         }
-
-        public function where(string $exp, string $null = ""){
+        public function where(string $exp){
             $explode = explode(" ",$exp);
             $explode[0] = "`{$explode[0]}`";
             $explode[1] = $explode[1];
             $explode[2] = ":{$explode[2]}";  
-            if($null !== ""){
-                if(is_null($null)){
-                    $this->_query .= "WHERE {$explode[0]} {$explode[1]} {$explode[2]} IS NULL";
-                }
-
-                if(strToLower($null) == "no"){
-                    $this->_query .= "WHERE {$explode[0]} {$explode[1]} {$explode[2]} IS NOT NULL";
-                }
-            }else{
-                $this->_query .= "WHERE {$explode[0]} {$explode[1]} {$explode[2]} ";
-            }        
+            $this->_query .= "WHERE {$explode[0]} {$explode[1]} {$explode[2]} ";
             return $this;
         }
 
+        public function is_null(boolean $null = true){  
+            if($null){
+                $this->_query .= "IS NULL ";
+            }else{
+                $this->_query .= "IS NOT NULL ";
+            }
+            return $this;
+        }
+        
         public function whereNot(string $exp){
             $explode = explode(" ",$exp);
             $explode[0] = "`{$explode[0]}`";
