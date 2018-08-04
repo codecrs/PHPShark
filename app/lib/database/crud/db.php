@@ -347,6 +347,20 @@ namespace crud{
             $this->_query .= "GROUP BY {$col} {$progress} ";
             return $this;
         }
+        
+         public function having(string $exp, $agr = "count"){
+            $agr = strtoupper($agr);
+            $explode = explode(" ",$exp);
+            $explode[0] = "`{$explode[0]}`";
+            $explode[1] = $explode[1];
+            if (strpos($explode[2], '.') !== false) {
+                $explode[2] = "{$explode[2]}"
+            }else{
+                $explode[2] = ":{$explode[2]}";  
+            }      
+            $this->_query .= "HAVING {$agr}({$explode[0]}) {$explode[1]} {$explode[2]} ";
+            return $this;
+        }
 
         public function limit(string $limit){
             $this->_query .= "LIMIT :{$limit} ";
