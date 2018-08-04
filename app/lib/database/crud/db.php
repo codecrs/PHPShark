@@ -249,28 +249,28 @@ namespace crud{
             return $this;
         }
 
-        public function limit(int $limit){
-            $this->_query .= "LIMIT {$limit} ";
+        public function limit(string $limit){
+            $this->_query .= "LIMIT :{$limit} ";
             return $this;
         }
 
-        public function offset(int $offset){
-            $this->_query .= "OFFSET {$offset} ";
+        public function offset(string $offset){
+            $this->_query .= "OFFSET :{$offset} ";
             return $this;
         }
-        
-        public function where_between($field, $lower, $upper){
-            $this->_query .= "WHERE `{$field}` BETWEEN {$lower} AND {$upper}";
+
+        public function where_between(string $field, string $lower, string $upper){
+            $this->_query .= "WHERE `{$field}` BETWEEN :{$lower} AND :{$upper}";
             return $this;
         }
 
         public function and_between($field, $lower, $upper){
-            $this->_query .= "AND `{$field}` BETWEEN {$lower} AND {$upper}";
+            $this->_query .= "AND `{$field}` BETWEEN :{$lower} AND :{$upper}";
             return $this;
         }
 
-        public function or_between($field, $lower, $upper){
-            $this->_query .= "OR `{$field}` BETWEEN {$lower} AND {$upper}";
+        public function or_between(string $field, string $lower, string $upper){
+            $this->_query .= "OR `{$field}` BETWEEN :{$lower} AND :{$upper}";
             return $this;
         }
 
