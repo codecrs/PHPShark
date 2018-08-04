@@ -114,13 +114,13 @@ namespace crud{
         }
 
         public function where_in(string $fieldName, $param) {
-            $sqlPart = "WHERE {$fieldName} IN (" 
+            $sqlPart = "WHERE `{$fieldName}` IN (" 
             if(is_array($param)){
                 foreach ($param as $field) {
                     if (strpos($field, '.') !== false) {
                         $sqlPart .= "{$field} "; 
                     }else{
-                        $sqlPart .= "`:{$field}` "; 
+                        $sqlPart .= ":{$field} "; 
                     }     
                 };
             }else{
@@ -133,13 +133,13 @@ namespace crud{
         }
 
         public function and_in(string $fieldName, $param) {
-            $sqlPart = "AND {$fieldName} IN (" 
+            $sqlPart = "AND `{$fieldName}` IN (" 
             if(is_array($param)){
                 foreach ($param as $field) {
                     if (strpos($field, '.') !== false) {
                         $sqlPart .= "{$field} "; 
                     }else{
-                        $sqlPart .= "`:{$field}` "; 
+                        $sqlPart .= ":{$field} "; 
                     }   
                 };
             }else{
@@ -152,13 +152,13 @@ namespace crud{
         }
 
         public function or_in(string $fieldName, $param) {
-            $sqlPart = "OR {$fieldName} IN (" 
+            $sqlPart = "OR `{$fieldName}` IN (" 
             if(is_array($param)){
                 foreach ($param as $field) {
                     if (strpos($field, '.') !== false) {
                         $sqlPart .= "{$field} "; 
                     }else{
-                        $sqlPart .= "`:{$field}` "; 
+                        $sqlPart .= ":{$field} "; 
                     }   
                 };
             }else{
@@ -171,13 +171,13 @@ namespace crud{
         }
 
         public function where_not_in(string $fieldName, $param) {
-            $sqlPart = "WHERE NOT {$fieldName} IN (" 
+            $sqlPart = "WHERE NOT `{$fieldName}` IN (" 
             if(is_array($param)){
                 foreach ($param as $field) {
                     if (strpos($field, '.') !== false) {
                         $sqlPart .= "{$field} "; 
                     }else{
-                        $sqlPart .= "`:{$field}` "; 
+                        $sqlPart .= ":{$field} "; 
                     }   
                 };
             }else{
@@ -190,13 +190,13 @@ namespace crud{
         }
 
         public function and_not_in(string $fieldName, $param) {
-            $sqlPart = "AND NOT {$fieldName} IN (" 
+            $sqlPart = "AND NOT `{$fieldName}` IN (" 
             if(is_array($param)){
                 foreach ($param as $field) {
                     if (strpos($field, '.') !== false) {
                         $sqlPart .= "{$field} "; 
                     }else{
-                        $sqlPart .= "`:{$field}` "; 
+                        $sqlPart .= ":{$field} "; 
                     }   
                 };
             }else{
@@ -209,13 +209,13 @@ namespace crud{
         }
 
         public function or_not_in(string $fieldName, $param) {
-            $sqlPart = "OR NOT {$fieldName} IN (" 
+            $sqlPart = "OR NOT `{$fieldName}` IN (" 
             if(is_array($param)){
                 foreach ($param as $field) {
                     if (strpos($field, '.') !== false) {
                         $sqlPart .= "{$field} "; 
                     }else{
-                        $sqlPart .= "`:{$field}` "; 
+                        $sqlPart .= ":{$field} "; 
                     }   
                 };
             }else{
@@ -357,7 +357,7 @@ namespace crud{
             $this->_query .= "OFFSET :{$offset} ";
             return $this;
         }
-        
+
         public function union($opt = null){
             if($opt){
                 $opt = strtoupper($opt);
