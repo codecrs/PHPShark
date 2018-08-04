@@ -357,6 +357,15 @@ namespace crud{
             $this->_query .= "OFFSET :{$offset} ";
             return $this;
         }
+        
+        public function union($opt = null){
+            if($opt){
+                $this->_query .= "UNION {$opt}";
+            }else{
+                $this->_query .= "UNION ";
+            }
+            return $this;   
+        }
 
         public function where_between(string $field, string $lower, string $upper){
             $this->_query .= "WHERE `{$field}` BETWEEN :{$lower} AND :{$upper}";
