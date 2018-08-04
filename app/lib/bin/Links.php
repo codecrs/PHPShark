@@ -26,13 +26,33 @@ use core\lib\pages as pages;
  **/
 
 
-function url($path = null){
+    function url($path = null){
       $base = utils\Config::get('project/base');
-      if($path !== null){
-        return "{$base}{$path}";
+      if($base){
+        if($path !== null){
+            return "{$base}{$path}";
+          }else{
+            return "{$base}";
+          }
       }else{
-        return "{$base}";
+            $base_path = '';
+            if (isset($_SERVER['HTTPS'])) {
+                $http = 'https://';
+            }
+            else {
+                $http = 'http://';
+            }
+            
+            $base_path = $http . $_SERVER['HTTP_HOST'];
+            $base_file = $_SERVER['PHP_SELF'];
+            $base_file = explode('/', $base_file);
+            if ( ($key = array_search('index.php', $base_file)) !== false) {
+                unset($base_file[$key]);
+            }
+            $folder_link = join('/', $base_file) . '/';
+            return $base_path . $folder_link . $path;
       }
+
 
     //------------------------------------------------------------
     //FOR DEBUGGING AND REFERENCES - DO NOT DELETE
