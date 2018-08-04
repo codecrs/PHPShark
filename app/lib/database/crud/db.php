@@ -107,6 +107,12 @@ namespace crud{
             return $this;
         }
 
+        public function join($table, $on, $type = "inner"){
+            $type = strtoupper($type);
+            $this->_query .= "{$type} JOIN {$table} ON {$on} ";
+            return $this;
+        }
+
         public function where_in(string $fieldName, $param) {
             $sqlPart = "WHERE {$fieldName} IN (" 
             if(is_array($param)){
