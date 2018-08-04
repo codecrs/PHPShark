@@ -110,11 +110,12 @@ namespace crud{
             return $this;
         }
 
-        public function is_null(boolean $null = true){  
+        public function is_null($field, boolean $null = true, $agr = "where"){  
+            $agr = strtoupper($agr);
             if($null){
-                $this->_query .= "IS NULL ";
+                $this->_query .= "{$agr} {$field} IS NULL ";
             }else{
-                $this->_query .= "IS NOT NULL ";
+                $this->_query .= "{$agr} {$field} IS NOT NULL ";
             }
             return $this;
         }
