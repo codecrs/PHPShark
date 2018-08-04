@@ -188,7 +188,7 @@ namespace crud{
             return $this;
         }
         
-        public function whereNot(string $exp){
+        public function where_not(string $exp){
             $explode = explode(" ",$exp);
             $explode[0] = "`{$explode[0]}`";
             $explode[1] = $explode[1];
@@ -206,7 +206,7 @@ namespace crud{
             return $this;
         }
         
-        public function andNot(string $exp){
+        public function and_not(string $exp){
             $explode = explode(" ",$exp);
             $explode[0] = "`{$explode[0]}`";
             $explode[1] = $explode[1];
@@ -221,6 +221,15 @@ namespace crud{
             $explode[1] = $explode[1];
             $explode[2] = ":{$explode[2]}";           
             $this->_query .= "OR {$explode[0]} {$explode[1]} {$explode[2]} ";
+            return $this;
+        }
+        
+         public function or_not(string $exp){
+            $explode = explode(" ",$exp);
+            $explode[0] = "`{$explode[0]}`";
+            $explode[1] = $explode[1];
+            $explode[2] = ":{$explode[2]}";          
+            $this->_query .= "OR NOT {$explode[0]} {$explode[1]} {$explode[2]} ";
             return $this;
         }
 
