@@ -112,7 +112,7 @@ namespace crud{
             if(is_array($param)){
                 foreach ($param as $field) {
                     if (strpos($field, '.') !== false) {
-                        $sqlPart .= "`{$field}` "; 
+                        $sqlPart .= "{$field} "; 
                     }else{
                         $sqlPart .= "`:{$field}` "; 
                     }     
@@ -131,7 +131,7 @@ namespace crud{
             if(is_array($param)){
                 foreach ($param as $field) {
                     if (strpos($field, '.') !== false) {
-                        $sqlPart .= "`{$field}` "; 
+                        $sqlPart .= "{$field} "; 
                     }else{
                         $sqlPart .= "`:{$field}` "; 
                     }   
@@ -150,7 +150,7 @@ namespace crud{
             if(is_array($param)){
                 foreach ($param as $field) {
                     if (strpos($field, '.') !== false) {
-                        $sqlPart .= "`{$field}` "; 
+                        $sqlPart .= "{$field} "; 
                     }else{
                         $sqlPart .= "`:{$field}` "; 
                     }   
@@ -169,7 +169,7 @@ namespace crud{
             if(is_array($param)){
                 foreach ($param as $field) {
                     if (strpos($field, '.') !== false) {
-                        $sqlPart .= "`{$field}` "; 
+                        $sqlPart .= "{$field} "; 
                     }else{
                         $sqlPart .= "`:{$field}` "; 
                     }   
@@ -188,7 +188,7 @@ namespace crud{
             if(is_array($param)){
                 foreach ($param as $field) {
                     if (strpos($field, '.') !== false) {
-                        $sqlPart .= "`{$field}` "; 
+                        $sqlPart .= "{$field} "; 
                     }else{
                         $sqlPart .= "`:{$field}` "; 
                     }   
@@ -207,7 +207,7 @@ namespace crud{
             if(is_array($param)){
                 foreach ($param as $field) {
                     if (strpos($field, '.') !== false) {
-                        $sqlPart .= "`{$field}` "; 
+                        $sqlPart .= "{$field} "; 
                     }else{
                         $sqlPart .= "`:{$field}` "; 
                     }   
