@@ -81,8 +81,8 @@ namespace crud{
             $this->_query = "SELECT DISTINCT {$col} ";
             return $this;
         }
-        
-         public function count_distinct(array $columns){
+
+        public function count_distinct(array $columns){
             $this->_query = "";
             $this->_queryType = "select";
             $col = join(",", $columns);
@@ -96,30 +96,26 @@ namespace crud{
             $this->_query = "SELECT {$func}({$column}) ";
             return $this;
         }
-        
-        public function as(string $field){
-            $this->_query .= "AS `{$field}` ";
-            return $this;
-        }
 
         public function from(string $table){
             $this->_query .= "FROM `{$this->_database}`.`{$table}` ";
             return $this;
         }
-        public function where(string $exp){
-            $explode = explode(" ",$exp);
-            $explode[0] = "`{$explode[0]}`";
-            $explode[1] = $explode[1];
-            $explode[2] = ":{$explode[2]}";  
-            $this->_query .= "WHERE {$explode[0]} {$explode[1]} {$explode[2]} ";
+
+        public function as(string $field){
+            $this->_query .= "AS `{$field}` ";
             return $this;
         }
-        
+
         public function where_in(string $fieldName, $param) {
             $sqlPart = "WHERE {$fieldName} IN (" 
             if(is_array($param)){
-                foreach ($param as $key => $value) {
-                    $sqlPart .= "`:{$field}` ";
+                foreach ($param as $field) {
+                    if (strpos($field, '.') !== false) {
+                        $sqlPart .= "`{$field}` "; 
+                    }else{
+                        $sqlPart .= "`:{$field}` "; 
+                    }     
                 };
             }else{
                 $sqlPart .= $param;
@@ -133,8 +129,12 @@ namespace crud{
         public function and_in(string $fieldName, $param) {
             $sqlPart = "AND {$fieldName} IN (" 
             if(is_array($param)){
-                foreach ($param as $key => $value) {
-                    $sqlPart .= "`:{$field}` ";
+                foreach ($param as $field) {
+                    if (strpos($field, '.') !== false) {
+                        $sqlPart .= "`{$field}` "; 
+                    }else{
+                        $sqlPart .= "`:{$field}` "; 
+                    }   
                 };
             }else{
                 $sqlPart .= $param;
@@ -148,8 +148,12 @@ namespace crud{
         public function or_in(string $fieldName, $param) {
             $sqlPart = "OR {$fieldName} IN (" 
             if(is_array($param)){
-                foreach ($param as $key => $value) {
-                    $sqlPart .= "`:{$field}` ";
+                foreach ($param as $field) {
+                    if (strpos($field, '.') !== false) {
+                        $sqlPart .= "`{$field}` "; 
+                    }else{
+                        $sqlPart .= "`:{$field}` "; 
+                    }   
                 };
             }else{
                 $sqlPart .= $param;
@@ -163,8 +167,12 @@ namespace crud{
         public function where_not_in(string $fieldName, $param) {
             $sqlPart = "WHERE NOT {$fieldName} IN (" 
             if(is_array($param)){
-                foreach ($param as $key => $value) {
-                    $sqlPart .= "`:{$field}` ";
+                foreach ($param as $field) {
+                    if (strpos($field, '.') !== false) {
+                        $sqlPart .= "`{$field}` "; 
+                    }else{
+                        $sqlPart .= "`:{$field}` "; 
+                    }   
                 };
             }else{
                 $sqlPart .= $param;
@@ -178,8 +186,12 @@ namespace crud{
         public function and_not_in(string $fieldName, $param) {
             $sqlPart = "AND NOT {$fieldName} IN (" 
             if(is_array($param)){
-                foreach ($param as $key => $value) {
-                    $sqlPart .= "`:{$field}` ";
+                foreach ($param as $field) {
+                    if (strpos($field, '.') !== false) {
+                        $sqlPart .= "`{$field}` "; 
+                    }else{
+                        $sqlPart .= "`:{$field}` "; 
+                    }   
                 };
             }else{
                 $sqlPart .= $param;
@@ -193,8 +205,12 @@ namespace crud{
         public function or_not_in(string $fieldName, $param) {
             $sqlPart = "OR NOT {$fieldName} IN (" 
             if(is_array($param)){
-                foreach ($param as $key => $value) {
-                    $sqlPart .= "`:{$field}` ";
+                foreach ($param as $field) {
+                    if (strpos($field, '.') !== false) {
+                        $sqlPart .= "`{$field}` "; 
+                    }else{
+                        $sqlPart .= "`:{$field}` "; 
+                    }   
                 };
             }else{
                 $sqlPart .= $param;
@@ -202,6 +218,19 @@ namespace crud{
             $sqlPart .= ") ";
 
             $this->_query = $sqlPart;
+            return $this;
+        }
+
+        public function where(string $exp){
+            $explode = explode(" ",$exp);
+            $explode[0] = "`{$explode[0]}`";
+            $explode[1] = $explode[1];
+            if (strpos($explode[2], '.') !== false) {
+                $explode[2] = "{$explode[2]}"
+            }else{
+                $explode[2] = ":{$explode[2]}";  
+            }      
+            $this->_query .= "WHERE {$explode[0]} {$explode[1]} {$explode[2]} ";
             return $this;
         }
 
@@ -231,12 +260,16 @@ namespace crud{
             }
             return $this;
         }
-        
+
         public function where_not(string $exp){
             $explode = explode(" ",$exp);
             $explode[0] = "`{$explode[0]}`";
             $explode[1] = $explode[1];
-            $explode[2] = ":{$explode[2]}";          
+            if (strpos($explode[2], '.') !== false) {
+                $explode[2] = "{$explode[2]}"
+            }else{
+                $explode[2] = ":{$explode[2]}";  
+            }              
             $this->_query .= "WHERE NOT {$explode[0]} {$explode[1]} {$explode[2]} ";
             return $this;
         }
@@ -245,16 +278,24 @@ namespace crud{
             $explode = explode(" ",$exp);
             $explode[0] = "`{$explode[0]}`";
             $explode[1] = $explode[1];
-            $explode[2] = ":{$explode[2]}";          
+            if (strpos($explode[2], '.') !== false) {
+                $explode[2] = "{$explode[2]}"
+            }else{
+                $explode[2] = ":{$explode[2]}";  
+            }        
             $this->_query .= "AND {$explode[0]} {$explode[1]} {$explode[2]} ";
             return $this;
         }
-        
+
         public function and_not(string $exp){
             $explode = explode(" ",$exp);
             $explode[0] = "`{$explode[0]}`";
             $explode[1] = $explode[1];
-            $explode[2] = ":{$explode[2]}";          
+            if (strpos($explode[2], '.') !== false) {
+                $explode[2] = "{$explode[2]}"
+            }else{
+                $explode[2] = ":{$explode[2]}";  
+            }              
             $this->_query .= "AND NOT {$explode[0]} {$explode[1]} {$explode[2]} ";
             return $this;
         }
@@ -263,16 +304,24 @@ namespace crud{
             $explode = explode(" ",$exp);
             $explode[0] = "`{$explode[0]}`";
             $explode[1] = $explode[1];
-            $explode[2] = ":{$explode[2]}";           
+            if (strpos($explode[2], '.') !== false) {
+                $explode[2] = "{$explode[2]}"
+            }else{
+                $explode[2] = ":{$explode[2]}";  
+            }               
             $this->_query .= "OR {$explode[0]} {$explode[1]} {$explode[2]} ";
             return $this;
         }
-        
-         public function or_not(string $exp){
+
+        public function or_not(string $exp){
             $explode = explode(" ",$exp);
             $explode[0] = "`{$explode[0]}`";
             $explode[1] = $explode[1];
-            $explode[2] = ":{$explode[2]}";          
+            if (strpos($explode[2], '.') !== false) {
+                $explode[2] = "{$explode[2]}"
+            }else{
+                $explode[2] = ":{$explode[2]}";  
+            }              
             $this->_query .= "OR NOT {$explode[0]} {$explode[1]} {$explode[2]} ";
             return $this;
         }
@@ -317,8 +366,8 @@ namespace crud{
             $this->_query .= "OR `{$field}` BETWEEN :{$lower} AND :{$upper}";
             return $this;
         }
-        
-         public function where_not_between(string $field, string $lower, string $upper){
+
+        public function where_not_between(string $field, string $lower, string $upper){
             $this->_query .= "WHERE `{$field}` NOT BETWEEN :{$lower} AND :{$upper}";
             return $this;
         }
