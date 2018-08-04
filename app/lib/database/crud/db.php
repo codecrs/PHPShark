@@ -114,6 +114,18 @@ namespace crud{
             $this->_query .= "WHERE {$explode[0]} {$explode[1]} {$explode[2]} ";
             return $this;
         }
+        
+        public function in(string $fieldName, array $paramArr, $con = "where") {
+            $con = strtoupper($con);
+            $sqlPart = "{$con} {$fieldName} IN (" 
+            foreach ($paramArr as $key => $value) {
+                $sqlPart .= "`:{$field}` ";
+            };
+            $sqlPart .= ")";
+
+            $this->_query = $sqlPart;
+            return $this;
+        }
 
         public function is_null($field, boolean $null = true, $agr = "where"){  
             $agr = strtoupper($agr);
