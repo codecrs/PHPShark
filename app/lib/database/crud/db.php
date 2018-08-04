@@ -138,6 +138,15 @@ namespace crud{
             $this->_query .= "AND {$explode[0]} {$explode[1]} {$explode[2]} ";
             return $this;
         }
+        
+        public function andNot(string $exp){
+            $explode = explode(" ",$exp);
+            $explode[0] = "`{$explode[0]}`";
+            $explode[1] = $explode[1];
+            $explode[2] = ":{$explode[2]}";          
+            $this->_query .= "AND NOT {$explode[0]} {$explode[1]} {$explode[2]} ";
+            return $this;
+        }
 
         public function or(string $exp){
             $explode = explode(" ",$exp);
