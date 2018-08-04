@@ -264,7 +264,7 @@ namespace crud{
             return $this;
         }
 
-        public function and_between($field, $lower, $upper){
+        public function and_between(string $field, string $lower, string $upper){
             $this->_query .= "AND `{$field}` BETWEEN :{$lower} AND :{$upper}";
             return $this;
         }
@@ -273,7 +273,21 @@ namespace crud{
             $this->_query .= "OR `{$field}` BETWEEN :{$lower} AND :{$upper}";
             return $this;
         }
+        
+         public function where_not_between(string $field, string $lower, string $upper){
+            $this->_query .= "WHERE `{$field}` NOT BETWEEN :{$lower} AND :{$upper}";
+            return $this;
+        }
 
+        public function and_not_between(string $field, string $lower, string $upper){
+            $this->_query .= "AND `{$field}` NOT BETWEEN :{$lower} AND :{$upper}";
+            return $this;
+        }
+
+        public function or_not_between(string $field, string $lower, string $upper){
+            $this->_query .= "OR `{$field}` NOT BETWEEN :{$lower} AND :{$upper}";
+            return $this;
+        }
 
         public function x($opt = null){
             $this->_statement = $this->prepare(trim($this->_query));
