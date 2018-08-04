@@ -360,6 +360,7 @@ namespace crud{
         
         public function union($opt = null){
             if($opt){
+                $opt = strtoupper($opt);
                 $this->_query .= "UNION {$opt}";
             }else{
                 $this->_query .= "UNION ";
