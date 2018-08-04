@@ -115,12 +115,16 @@ namespace crud{
             return $this;
         }
         
-        public function in(string $fieldName, array $paramArr, $con = "where") {
+        public function in(string $fieldName, $param, $con = "where") {
             $con = strtoupper($con);
             $sqlPart = "{$con} {$fieldName} IN (" 
-            foreach ($paramArr as $key => $value) {
-                $sqlPart .= "`:{$field}` ";
-            };
+            if(is_array($param)){
+                foreach ($param as $key => $value) {
+                    $sqlPart .= "`:{$field}` ";
+                };
+            }else{
+                $sqlPart .= $param;
+            }
             $sqlPart .= ")";
 
             $this->_query = $sqlPart;
