@@ -115,9 +115,8 @@ namespace crud{
             return $this;
         }
         
-        public function in(string $fieldName, $param, $con = "where") {
-            $con = strtoupper($con);
-            $sqlPart = "{$con} {$fieldName} IN (" 
+        public function where_in(string $fieldName, $param) {
+            $sqlPart = "WHERE {$fieldName} IN (" 
             if(is_array($param)){
                 foreach ($param as $key => $value) {
                     $sqlPart .= "`:{$field}` ";
@@ -125,18 +124,66 @@ namespace crud{
             }else{
                 $sqlPart .= $param;
             }
-            $sqlPart .= ")";
+            $sqlPart .= ") ";
 
             $this->_query = $sqlPart;
             return $this;
         }
 
-        public function is_null($field, boolean $null = true, $agr = "where"){  
-            $agr = strtoupper($agr);
-            if($null){
-                $this->_query .= "{$agr} {$field} IS NULL ";
+        public function and_in(string $fieldName, $param) {
+            $sqlPart = "AND {$fieldName} IN (" 
+            if(is_array($param)){
+                foreach ($param as $key => $value) {
+                    $sqlPart .= "`:{$field}` ";
+                };
             }else{
-                $this->_query .= "{$agr} {$field} IS NOT NULL ";
+                $sqlPart .= $param;
+            }
+            $sqlPart .= ") ";
+
+            $this->_query = $sqlPart;
+            return $this;
+        }
+
+        public function or_in(string $fieldName, $param) {
+            $sqlPart = "OR {$fieldName} IN (" 
+            if(is_array($param)){
+                foreach ($param as $key => $value) {
+                    $sqlPart .= "`:{$field}` ";
+                };
+            }else{
+                $sqlPart .= $param;
+            }
+            $sqlPart .= ") ";
+
+            $this->_query = $sqlPart;
+            return $this;
+        }
+
+
+        public function where_is_null($field, boolean $null = true){  
+            if($null){
+                $this->_query .= "WHERE {$field} IS NULL ";
+            }else{
+                $this->_query .= "WHERE {$field} IS NOT NULL ";
+            }
+            return $this;
+        }
+
+        public function and_is_null($field, boolean $null = true){  
+            if($null){
+                $this->_query .= "AND {$field} IS NULL ";
+            }else{
+                $this->_query .= "AND {$field} IS NOT NULL ";
+            }
+            return $this;
+        }
+
+        public function or_is_null($field, boolean $null = true){  ;
+            if($null){
+                $this->_query .= "OR {$field} IS NULL ";
+            }else{
+                $this->_query .= "OR {$field} IS NOT NULL ";
             }
             return $this;
         }
