@@ -254,6 +254,20 @@ namespace crud{
             return $this;
         }
 
+        public function where_between($field, $lower, $upper){
+            $this->_query .= "WHERE `{$field}` BETWEEN {$lower} AND {$upper}";
+            return $this;
+        }
+
+        public function and_between($field, $lower, $upper){
+            $this->_query .= "AND `{$field}` BETWEEN {$lower} AND {$upper}";
+            return $this;
+        }
+
+        public function or_between($field, $lower, $upper){
+            $this->_query .= "OR `{$field}` BETWEEN {$lower} AND {$upper}";
+            return $this;
+        }
 
         public function offset(int $offset){
             $this->_query .= "OFFSET {$offset} ";
