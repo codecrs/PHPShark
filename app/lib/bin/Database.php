@@ -85,7 +85,7 @@ function  view_clear(string $view_name)
 
 /***************************************************************
  ***************************************************************/
-function dbcount(array $arr)
+function dbcount($arr)
 {
     if (is_array($arr)) {
         $num = count($arr);
