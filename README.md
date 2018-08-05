@@ -2,6 +2,12 @@
 PHP Shark - An Intensive PHP MVC framework for Advanced Developers. It has basic functionality of putting up complex portals in minutes.
 However it is much as RAW as it is an Deliverable Framework. It is Not to be compare with Competents - CAKEPHP & CODEIGNITER or Even LARAVEL, as it was built to meet its own challenges. 
 
+# Documentation
+
+PHP Shark was created and Developed by consulting company **Contemplative Radical Solutions**.
+
+Find full documentaion of PHP Shark [here](http://www.contemplativeradicals.com/docs/phpshark)
+
 # Purpose of PHPShark.
 PHP SHARK is built basically for its ORM Query Library for Modeling. 
 A powerful query library build with PDO architecture. 
@@ -9,7 +15,7 @@ A powerful query library build with PDO architecture.
 **PS** : the software is well tested with MySql Database. Will be ready for other databases soon. 
 
 ## Lets us create a country table with PHPShark Query. 
-```php
+```ph
 if(!\orm\Query::is_table('country')){
     \orm\Table::create()
     ->table('country')
@@ -689,7 +695,3 @@ via LinkedIn Netwrok. Feel free to use the application and contribute with pull 
 The Application was Pre-Configures with [PHP-Mailer](https://github.com/PHPMailer/PHPMailer) for messageing purpose. 
 Be sure to visit them for their documentations when required. 
 
-
-# COMMING SOON
-The complete Documentation of this application will be release soon with a Demonstration. 
-Bye Bye, Take care. :)
