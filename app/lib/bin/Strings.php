@@ -136,7 +136,7 @@ function findWords($string,$word,$before=0,$after=0,$maxFoundCount=1)
     return $foundInstances;
 }
 
-function clean($string){
+function str_clean($string){
         $table = array(
                 '?' => 'S', '?' => 's', '?' => 'Dj', '?' => 'dj', '?' => 'Z',
                 '?' => 'z', '?' => 'C', '?' => 'c', '?' => 'C', '?' => 'c',
