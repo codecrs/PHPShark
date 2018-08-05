@@ -73,7 +73,7 @@ function get_localtime()
 }
 /***************************************************************
  ***************************************************************/
-function word_month($number)
+function word_month(int $number)
 {
     if ($number >= 1 && $number <= 12) :
         $string = '';
