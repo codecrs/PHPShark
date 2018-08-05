@@ -114,7 +114,7 @@ namespace crud{
         }
 
         public function where_in(string $fieldName, $param) {
-            $sqlPart = "WHERE `{$fieldName}` IN (" 
+            $sqlPart = "WHERE `{$fieldName}` IN (";
             if(is_array($param)){
                 foreach ($param as $field) {
                     if (strpos($field, '.') !== false) {
@@ -133,7 +133,7 @@ namespace crud{
         }
 
         public function and_in(string $fieldName, $param) {
-            $sqlPart = "AND `{$fieldName}` IN (" 
+            $sqlPart = "AND `{$fieldName}` IN (";
             if(is_array($param)){
                 foreach ($param as $field) {
                     if (strpos($field, '.') !== false) {
@@ -152,7 +152,7 @@ namespace crud{
         }
 
         public function or_in(string $fieldName, $param) {
-            $sqlPart = "OR `{$fieldName}` IN (" 
+            $sqlPart = "OR `{$fieldName}` IN (";
             if(is_array($param)){
                 foreach ($param as $field) {
                     if (strpos($field, '.') !== false) {
@@ -171,7 +171,7 @@ namespace crud{
         }
 
         public function where_not_in(string $fieldName, $param) {
-            $sqlPart = "WHERE NOT `{$fieldName}` IN (" 
+            $sqlPart = "WHERE NOT `{$fieldName}` IN (";
             if(is_array($param)){
                 foreach ($param as $field) {
                     if (strpos($field, '.') !== false) {
@@ -190,7 +190,7 @@ namespace crud{
         }
 
         public function and_not_in(string $fieldName, $param) {
-            $sqlPart = "AND NOT `{$fieldName}` IN (" 
+            $sqlPart = "AND NOT `{$fieldName}` IN (";
             if(is_array($param)){
                 foreach ($param as $field) {
                     if (strpos($field, '.') !== false) {
@@ -209,7 +209,7 @@ namespace crud{
         }
 
         public function or_not_in(string $fieldName, $param) {
-            $sqlPart = "OR NOT `{$fieldName}` IN (" 
+            $sqlPart = "OR NOT `{$fieldName}` IN (";
             if(is_array($param)){
                 foreach ($param as $field) {
                     if (strpos($field, '.') !== false) {
@@ -232,7 +232,7 @@ namespace crud{
             $explode[0] = "`{$explode[0]}`";
             $explode[1] = $explode[1];
             if (strpos($explode[2], '.') !== false) {
-                $explode[2] = "{$explode[2]}"
+                $explode[2] = "{$explode[2]}";
             }else{
                 $explode[2] = ":{$explode[2]}";  
             }      
@@ -240,7 +240,7 @@ namespace crud{
             return $this;
         }
 
-        public function where_is_null($field, boolean $null = true){  
+        public function where_is_null($field, $null = true){  
             if($null){
                 $this->_query .= "WHERE {$field} IS NULL ";
             }else{
@@ -249,7 +249,7 @@ namespace crud{
             return $this;
         }
 
-        public function and_is_null($field, boolean $null = true){  
+        public function and_is_null($field, $null = true){  
             if($null){
                 $this->_query .= "AND {$field} IS NULL ";
             }else{
@@ -258,7 +258,7 @@ namespace crud{
             return $this;
         }
 
-        public function or_is_null($field, boolean $null = true){  ;
+        public function or_is_null($field, $null = true){  ;
             if($null){
                 $this->_query .= "OR {$field} IS NULL ";
             }else{
@@ -272,7 +272,7 @@ namespace crud{
             $explode[0] = "`{$explode[0]}`";
             $explode[1] = $explode[1];
             if (strpos($explode[2], '.') !== false) {
-                $explode[2] = "{$explode[2]}"
+                $explode[2] = "{$explode[2]}";
             }else{
                 $explode[2] = ":{$explode[2]}";  
             }              
@@ -285,7 +285,7 @@ namespace crud{
             $explode[0] = "`{$explode[0]}`";
             $explode[1] = $explode[1];
             if (strpos($explode[2], '.') !== false) {
-                $explode[2] = "{$explode[2]}"
+                $explode[2] = "{$explode[2]}";
             }else{
                 $explode[2] = ":{$explode[2]}";  
             }        
@@ -298,7 +298,7 @@ namespace crud{
             $explode[0] = "`{$explode[0]}`";
             $explode[1] = $explode[1];
             if (strpos($explode[2], '.') !== false) {
-                $explode[2] = "{$explode[2]}"
+                $explode[2] = "{$explode[2]}";
             }else{
                 $explode[2] = ":{$explode[2]}";  
             }              
@@ -311,7 +311,7 @@ namespace crud{
             $explode[0] = "`{$explode[0]}`";
             $explode[1] = $explode[1];
             if (strpos($explode[2], '.') !== false) {
-                $explode[2] = "{$explode[2]}"
+                $explode[2] = "{$explode[2]}";
             }else{
                 $explode[2] = ":{$explode[2]}";  
             }               
@@ -324,7 +324,7 @@ namespace crud{
             $explode[0] = "`{$explode[0]}`";
             $explode[1] = $explode[1];
             if (strpos($explode[2], '.') !== false) {
-                $explode[2] = "{$explode[2]}"
+                $explode[2] = "{$explode[2]}";
             }else{
                 $explode[2] = ":{$explode[2]}";  
             }              
@@ -347,14 +347,14 @@ namespace crud{
             $this->_query .= "GROUP BY {$col} {$progress} ";
             return $this;
         }
-        
-         public function having(string $exp, $agr = "count"){
+
+        public function having(string $exp, $agr = "count"){
             $agr = strtoupper($agr);
             $explode = explode(" ",$exp);
             $explode[0] = "`{$explode[0]}`";
             $explode[1] = $explode[1];
             if (strpos($explode[2], '.') !== false) {
-                $explode[2] = "{$explode[2]}"
+                $explode[2] = "{$explode[2]}";
             }else{
                 $explode[2] = ":{$explode[2]}";  
             }      
