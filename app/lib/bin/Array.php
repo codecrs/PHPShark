@@ -1,19 +1,19 @@
 <?php
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 /**
- *  Qmvc - Quick PHP MVC 
- *  Developed by Contempative Radical Solutions Consulting Private Ltd. 
+ *  Qmvc - Quick PHP MVC
+ *  Developed by Contempative Radical Solutions Consulting Private Ltd.
  *  Project Initiative By Ankit Kumar
  *  http://www.contemplativeradicals.com
- *  
- *  @copyright  Contempative Radical Solutions Consulting Private Ltd. 
+ *
+ *  @copyright  Contempative Radical Solutions Consulting Private Ltd.
  *  @link
  *  @since      1.0.0
  *  @license
- *  
+ *
  * Change Logs
  * *******************************************************************
- * 
+ *
  * *******************************************************************
  **/
 
@@ -34,7 +34,7 @@ function array_clean(array $arr)
 			return $arr;
 	}
 	else {
-		setError( "Array Object cannot be empty!" );	
+		setError( "Array Object cannot be empty!" );
 	}
 }
 /***************************************************************
@@ -92,7 +92,7 @@ function isAssoc(array $arr)
 }
 /***************************************************************
  ***************************************************************/
-function arfind(array $array, string $where, string $value)
+function ar_find(array $array, string $where, string $value)
 {
 	if (isAssoc($array)) {
 		$key = array_search($where, array_column($array, $value));
@@ -104,30 +104,30 @@ function arfind(array $array, string $where, string $value)
 }
 /***************************************************************
  ***************************************************************/
-function arintersect(array $array1, array $array2)
+function ar_intersect(array $array1, array $array2)
 {
 	$r = array_intersect($array1, $array2);
 	return $r;
 }
 /***************************************************************
  ***************************************************************/
-function ardifference(array $array1, array $array2)
+function ar_difference(array $array1, array $array2)
 {
 	$r = array_diff($array1, $array2);
 	return $r;
 }
 /***************************************************************
  ***************************************************************/
-function arunique(array $array1, array $array2)
+function ar_unique(array $array1, array $array2)
 {
-	$r = array_unique(array_merge($array1, $array2));
+	$r =& array_unique(array_merge($array1, $array2));
 	return $r;
 }
 /***************************************************************
  ***************************************************************/
 function array_concatanate(array $arr, string $using)
 {
-	$str = join($using, $arr);
+	$str =& join($using, $arr);
 	return $r;
 }
 /***************************************************************
@@ -145,4 +145,4 @@ function array_concatanate(array $arr, string $using)
 
 function array_has(Array $array, String $index){
 	return array_key_exists($index,$array);
-}	
+}
