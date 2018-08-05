@@ -75,7 +75,7 @@ function db_condition(string $condition)
 	return $condition;
 }
 
-function clear(string $view_name)
+function  view_clear(string $view_name)
 {
 	$con = pdo();
 	$query = "DROP VIEW [{$view_name}]";
