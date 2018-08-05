@@ -93,7 +93,7 @@ class Session
 			return $session;
 		}
 		else {
-			self::put($name, $string);
+			self::set($name, $string);
 		}
 	}
 }
