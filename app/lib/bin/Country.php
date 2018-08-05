@@ -46,9 +46,9 @@ function getLanguageByCode($language){
     return json_decode($content); 
 }
 
-function getDetailByCapital($language){
+function getDetailByCapital($capital){
     global $API;
-    $url = "{$API}lang/{$language}";
+    $url = "{$API}capital/{$capital}";
     $content = file_get_contents($url, false);
     return json_decode($content); 
 }
