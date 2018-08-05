@@ -35,7 +35,7 @@ function condense($str)
 }
 /***************************************************************
  ***************************************************************/
-function concatanate($str = '')
+function concatenate($str = '')
 {
 	if (is_string($str)) {
 		$str .= $str;
